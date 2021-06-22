@@ -2,9 +2,9 @@ namespace CivRpgCharacterExample_20210615.models
 {
     public class range : Weapon
     {
-        public int MinRange { get; set; }
+       
         public int MaxRange { get; set; }
-        
+         public int MinRange { get; set; }
         public range() : base("Bow", 20, 500, 10, 1000)
         {
             MinRange = 5;

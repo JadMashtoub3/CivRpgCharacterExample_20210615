@@ -16,7 +16,7 @@ namespace CivRpgCharacterExample_20210615
             range bow = new range("Bow", 10, 200, 5, 50, 1, 5);
             magic wand = new magic("Wand of Pestilence", 10, 200, 5, 50, 1, 5, 2);
 
-            RpgCharacter fred = new RpgCharacter("Fred", 200, 20);
+            RpgCharacter fred = new RpgCharacter("Fred", 100, 50);
             RpgCharacter defaultCharacter = new RpgCharacter();
             fred.BackPack.AddNewItem(healthPotion);
             fred.BackPack.AddNewItem(healthPotion);
