@@ -32,7 +32,7 @@ namespace CivRpgCharacterExample_20210615.models
             this.BackPack = new Inventory(100);
 
             this.BackPack.Items.Add(new Item("Health Potion", 1, 10));
-            this.BackPack.Items.Add(new Item("Stick", 1, 1));
+            this.BackPack.Items.Add(new Item("Stick\t", 1, 1));
             this.BackPack.Items.Add(new Weapon("Big Wacky Stick", 5, 5, 1, 5));
         }
 

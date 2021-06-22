@@ -70,7 +70,7 @@ namespace CivRpgCharacterExample_20210615.models
             string result = "Name\t\t\t\t\tWeight\t\tValue\n";
             result += "---------------------------------------------------------------\n";
             foreach(Item thing in this.Items) {
-                result += $"{thing.Name}\t\t\t\t\t{thing.Weight}\t\t{thing.Value}\n";
+                result += $"{thing.Name}\t\t\t\t{thing.Weight}\t\t{thing.Value}\n";
             }
 
             return result;
