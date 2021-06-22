@@ -22,16 +22,21 @@ namespace CivRpgCharacterExample_20210615.models
         }
 
         public void SortByWeight() {
-            //TODO: complete this by using the above method as a base 
+            this.Items = this.Items.OrderBy(i => i.Weight).ToList();
         }
 
         public int GetCurrentCapacity() { 
-            //TODO: return the total weight of items in the Items list
-            return 0;
+            int i=0;
+            foreach (Item item in this.Items)
+            {
+                i+=item.Weight;
+            }
+            return i; 
+            
         }
 
         public void AddNewItem(Item item) { 
-            //TODO: Add the item to the backpack, if it doesn't make the backpack exceed WeightCapacity
+            this.Items.Add(item);
         }
 
         public void RemoveItem(string itemName) { 
@@ -50,9 +55,16 @@ namespace CivRpgCharacterExample_20210615.models
         }
 
         public int GetQuantity(string itemName) { 
-            //TODO: Get an item name and check how many of that item is in the list
-            return 0; 
+            int quantity=0;
+            foreach(Item i in this.Items){
+                if(i.Name==itemName){
+                    quantity++;
+                }
+            }
+            return quantity; 
         }
+             
+        
 
         public string ListItems() { 
             string result = "Name\t\t\t\t\tWeight\t\tValue\n";

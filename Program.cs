@@ -13,24 +13,23 @@ namespace CivRpgCharacterExample_20210615
             Item hat = new Item("Magic Cap", 2, 100);
 
             Weapon sword = new Weapon("Sword", 20, 200, 10, 100);
-            //TODO: uncommment the below when you've created the Ranged and Magic classes
-            //Ranged bow = new Ranged("Bow", 10, 200, 5, 50, 1, 5);
-            //Magic wand = new Magic("Wand of Pestilence", 10, 200, 5, 50, 1, 5, 2);
+            range bow = new range("Bow", 10, 200, 5, 50, 1, 5);
+            magic wand = new magic("Wand of Pestilence", 10, 200, 5, 50, 1, 5, 2);
 
             RpgCharacter fred = new RpgCharacter("Fred", 200, 20);
             RpgCharacter defaultCharacter = new RpgCharacter();
-
+            fred.BackPack.AddNewItem(healthPotion);
             fred.BackPack.AddNewItem(healthPotion);
             fred.BackPack.AddNewItem(stone);
             fred.BackPack.AddNewItem(hat);
-            //TODO: add herb to Fred's backpack
-            //TODO: add another Health Potion to Fred's backpack
+            fred.BackPack.AddNewItem(herb);
+            
             
 
-            //TODO: Sort Fred's backpack by Weight
+            fred.BackPack.SortByWeight();
             System.Console.WriteLine($"Fred's backpack\n {fred.BackPack.ListItems()}");
-            //TODO: Print the current capacity of Fred's backpack
-            //TODO: Print the number of Health Potions in Fred's backpack
+            Console.WriteLine($"Fred's backpack is at {fred.BackPack.GetCurrentCapacity()}");
+            Console.WriteLine($"{fred.BackPack.GetQuantity("Health Potion")} Health Potions in Fred's Backpack");
 
 
             defaultCharacter.BackPack.SortByName();
@@ -47,7 +46,7 @@ namespace CivRpgCharacterExample_20210615
                 }
 
                 if (i is Weapon) {
-                    System.Console.WriteLine($"{i.Name} is an Weapon");
+                    System.Console.WriteLine($"{i.Name} is a Weapon");
                 }
             }
         }
